@@ -1,21 +1,13 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        num_map = {}
-        for i in range(len(nums)):
-            complement = target - nums[i]
-            if complement in num_map.keys():
-                return [i, num_map[complement]]
-            num_map[nums[i]] = i
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        s = s.lower()
+        alpha_chars = [char for char in s if char.isalnum()]
 
-        return []
+        for idx in range(round(len(alpha_chars) / 2)):
+            if alpha_chars[idx] != alpha_chars[len(alpha_chars) - 1 - idx]:
+                return False
+
+        return True
 
 
-nums = [2, 7, 11, 15, 5, 22, 87, 56, -11]
-target = -9
-solution = Solution()
-print(solution.twoSum(nums, target))
+
