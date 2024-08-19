@@ -39,6 +39,25 @@ class Solution:
         return result
 
 
+class Solution2:
+    def isSymmetric(self, root: Optional[TreeNode]):
+        if not root:
+            return True
+
+        return self.isSame(root.left, root.right)
+
+    def isSame(self, left, right):
+        if not left and not right:
+            return True
+
+        if not left or not right:
+            return False
+
+        if left.val != right.val:
+            return False
+
+        return self.isSame(left.left, right.right) and self.isSame(left.right, right.left)
+
 # root = [1,2,2,null,3,null,3]
 
 from collections import deque
@@ -87,6 +106,7 @@ def print_tree(root):
 
 
 values = [1, 2, 2, None, 3, None, 3]
+values = [1,2,2,3,4,4,3]
 root = build_tree_from_list(values)
 
 solution = Solution()
