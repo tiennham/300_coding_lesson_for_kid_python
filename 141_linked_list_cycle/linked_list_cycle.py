@@ -32,4 +32,14 @@ class Solution(object):
 
         return False
 
-    
+    def my_hasCycle_2(self, head: Optional[ListNode]) -> bool:
+        # next_lst = []
+        current_node = head
+        while current_node:
+            if current_node.val is None:
+                return True
+            temp_node = current_node
+            current_node = current_node.next
+            temp_node.val = None
+
+        return False
