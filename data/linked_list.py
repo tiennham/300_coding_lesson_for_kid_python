@@ -15,6 +15,16 @@ class ListNode(object):
         return node_lst[0]
 
     @staticmethod
+    def print_linked_list(head):
+        current = head
+        lst_val = []
+        while current:
+            lst_val.append(str(current.val))
+            current = current.next
+
+        print(" => ".join(lst_val))
+
+    @staticmethod
     def build_cycle_linked_list(values, pos):
         if len(values) < 2:
             print("length must be greater than 2")
