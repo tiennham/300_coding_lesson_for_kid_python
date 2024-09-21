@@ -15,7 +15,7 @@ class Solution:
         for i in range(1, len(nums)):
             x = nums[i]
             pos = i - 1
-            while pos >= 0 and nums[pos] >= x:
+            while pos >= 0 and nums[pos] > x:
                 nums[pos + 1] = nums[pos]
                 pos -= 1
             nums[pos + 1] = x
@@ -26,3 +26,9 @@ values = generate_random_integers()
 print(values)
 solution = Solution()
 print(solution.insertion_sort(values))
+
+sum_result = 0
+for i in range(1, 100):
+    sum_result += i
+
+sum_result
